@@ -5,27 +5,27 @@ const Offerings = ({ data, isAuthenticated }) => {
   const [offerings, setOfferings] = useState(data);
   const [mounted, setMounted] = useState(false);
 
-  const getOfferings = async () => {
-    const res = await fetch("https://test-auth-app-ten.vercel.app/api/offerings", {
-      headers: {
-        Authorization: isAuthenticated,
-      },
-    });
+  // const getOfferings = async () => {
+  //   const res = await fetch("https://test-auth-app-ten.vercel.app/api/offerings", {
+  //     headers: {
+  //       Authorization: isAuthenticated,
+  //     },
+  //   });
 
-    return res.json();
-  };
+  //   return res.json();
+  // };
 
-  useEffect(() => {
-    setMounted(true);
+  // useEffect(() => {
+  //   setMounted(true);
 
-    if (!mounted && !isAuthenticated) return;
+  //   if (!mounted && !isAuthenticated) return;
 
-    (async function () {
-      const { data } = await getOfferings();
+  //   (async function () {
+  //     const { data } = await getOfferings();
 
-      setOfferings(data);
-    })();
-  }, [isAuthenticated]);
+  //     setOfferings(data);
+  //   })();
+  // }, [isAuthenticated]);
 
   return (
     <>

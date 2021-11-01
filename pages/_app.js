@@ -42,17 +42,17 @@ const App = ({ Component, pageProps }) => {
       password: "password",
     };
 
-    fetch("/api/login", {
-      method: "POST",
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then(({ token }) => {
-        console.log(token);
-        localStorage.setItem("token", token);
-        setToken(token);
-        setIsAuthenticated(true);
-      });
+    // fetch("/api/login", {
+    //   method: "POST",
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((res) => res.json())
+    //   .then(({ token }) => {
+    //     console.log(token);
+    //     localStorage.setItem("token", token);
+    //     setToken(token);
+    //     setIsAuthenticated(true);
+    //   });
   };
 
   const onLogout = () => {
