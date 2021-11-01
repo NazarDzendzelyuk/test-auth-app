@@ -4,7 +4,7 @@ const authOfferings = [...unAuth, "Four", "Five", "Six"];
 export default function offerings(req, res) {
   try {
     const { authorization } = req.headers;
-
+    console.log(authorization);
     const data =
       authorization && JSON.parse(authorization) ? authOfferings : unAuth;
 
