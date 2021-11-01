@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import axios from "axios";
+// import fetch from "isomorphic-unfetch";
 
 const Offerings = ({ data = [], isAuthenticated }) => {
   const [offerings, setOfferings] = useState(data);
