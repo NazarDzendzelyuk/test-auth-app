@@ -40,14 +40,14 @@ const Offerings = ({ data, isAuthenticated }) => {
 
 export default Offerings;
 
-export async function getStaticProps() {
-  const res = await nodeFetch("https://test-auth-app-ten.vercel.app/api/offerings");
+// export async function getStaticProps() {
+//   const res = await nodeFetch("https://test-auth-app-ten.vercel.app/api/offerings");
 
-  const data = await res.json();
+//   const data = await res.json();
 
-  return {
-    props: {
-      ...data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       ...data,
+//     },
+//   };
+// }
