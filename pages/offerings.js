@@ -6,7 +6,7 @@ const Offerings = ({ data, isAuthenticated }) => {
   const [mounted, setMounted] = useState(false);
 
   const getOfferings = async () => {
-    const res = await fetch("/api/offerings", {
+    const res = await fetch("/offerings", {
       headers: {
         Authorization: isAuthenticated,
       },
@@ -41,7 +41,7 @@ const Offerings = ({ data, isAuthenticated }) => {
 export default Offerings;
 
 export async function getStaticProps() {
-  const res = await nodeFetch("https://test-auth-app-git-main-ndzendzelyuk.vercel.app/offerings");
+  const res = await nodeFetch("/offerings");
 
   const data = await res.json();
 
