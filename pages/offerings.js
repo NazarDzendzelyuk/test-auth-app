@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import nodeFetch from "node-fetch";
+// import axios from "axios";
 
-const Offerings = ({ data, isAuthenticated }) => {
+const Offerings = ({ data = [], isAuthenticated }) => {
   const [offerings, setOfferings] = useState(data);
   const [mounted, setMounted] = useState(false);
 
-  // const getOfferings = async () => {
-  //   const res = await fetch("https://test-auth-app-ten.vercel.app/api/offerings", {
-  //     headers: {
-  //       Authorization: isAuthenticated,
-  //     },
-  //   });
+  const getOfferings = async () => {
+    const res = await fetch("/api/offerings", {
+      headers: {
+        Authorization: isAuthenticated,
+      },
+    });
 
-  //   return res.json();
-  // };
+    return res.json();
+  };
 
   // useEffect(() => {
   //   setMounted(true);
@@ -41,7 +41,7 @@ const Offerings = ({ data, isAuthenticated }) => {
 export default Offerings;
 
 // export async function getStaticProps() {
-//   const res = await nodeFetch("https://test-auth-app-ten.vercel.app/api/offerings");
+//   const res = await nodeFetch("http://localhost:3000/api/offerings");
 
 //   const data = await res.json();
 
