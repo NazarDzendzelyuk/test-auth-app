@@ -41,7 +41,7 @@ const Offerings = ({ data, isAuthenticated }) => {
 export default Offerings;
 
 export async function getStaticProps() {
-  const res = await nodeFetch("https://test-auth-app-git-main-ndzendzelyuk.vercel.app/api/offerings");
+  const res = await nodeFetch("https://test-auth-app-git-main-ndzendzelyuk.vercel.app/offerings");
 
   const data = await res.json();
 
